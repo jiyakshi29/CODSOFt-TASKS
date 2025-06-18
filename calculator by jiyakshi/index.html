@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>calculator</title>
+  <script defer src="app.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #1a1a1a 100%);
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .glow {
+      box-shadow: 0 0 10px #00fff2, 0 0 40px #00fff2;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 text-white">
+
+  <div class="w-full max-w-sm p-6 rounded-3xl glass glow">
+    <h1 class="text-3xl font-bold text-center mb-4 text-cyan-300 tracking-widest">AQUATIC CALC</h1>
+
+    <div id="display" class="w-full text-right p-4 text-2xl h-20 bg-black bg-opacity-50 rounded-lg mb-4 overflow-x-auto tracking-widest">
+      0
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <button class="btn bg-red-500" data-action="C">C</button>
+      <button class="btn" data-action="(">(</button>
+      <button class="btn" data-action=")">)</button>
+      <button class="btn bg-yellow-500" data-action="/">÷</button>
+
+      <button class="btn" data-action="7">7</button>
+      <button class="btn" data-action="8">8</button>
+      <button class="btn" data-action="9">9</button>
+      <button class="btn bg-yellow-500" data-action="*">×</button>
+
+      <button class="btn" data-action="4">4</button>
+      <button class="btn" data-action="5">5</button>
+      <button class="btn" data-action="6">6</button>
+      <button class="btn bg-yellow-500" data-action="-">−</button>
+
+      <button class="btn" data-action="1">1</button>
+      <button class="btn" data-action="2">2</button>
+      <button class="btn" data-action="3">3</button>
+      <button class="btn bg-yellow-500" data-action="+">+</button>
+
+      <button class="btn col-span-2" data-action="0">0</button>
+      <button class="btn" data-action=".">.</button>
+      <button class="btn bg-green-500" data-action="=">=</button>
+    </div>
+
+    <div class="mt-4 text-sm text-gray-400" id="history">history will appear here...</div>
+  </div>
+
+  <audio id="clickSound" src="https://freesound.org/data/previews/320/320181_5260877-lq.mp3"></audio>
+</body>
+</html>
